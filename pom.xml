@@ -8,9 +8,9 @@
 	<name>radan</name>
 	<url>http://maven.apache.org</url>
 	<scm>
-		<connection>scm:git:git@github.com:isudarshan/nexuspractice.git</connection>
-		<url>scm:git:git@github.com:isudarshan/nexuspractice.git</url>
-		<developerConnection>scm:git:git@github.com:isudarshan/nexuspractice.git</developerConnection>
+		<connection>scm:git:git@github.com:ramjaya/Radan.git</connection>
+		<url>scm:git:git@github.com:ramjaya/Radan.git</url>
+		<developerConnection>scm:git:git@github.com:ramjaya/Radan.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -19,14 +19,14 @@
 		<repository>
 			<id>radan</id>
 			<name>radan</name>
-			<url>http://localhost:8080/nexus/content/repositories/releases</url>
+			<url>http://localhost:8080/nexus/content/repositories/releases/</url>
 		</repository>
 
 		<!-- Publish the versioned releases here -->
 		<snapshotRepository>
 			<id>radan</id>
 			<name>radan</name>
-			<url>http://localhost:8080/nexus/content/repositories/snapshots</url>
+			<url>http://localhost:8080/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
