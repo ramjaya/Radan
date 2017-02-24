@@ -1,17 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.demo.app</groupId>
 	<artifactId>radan</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.5</version>
 	<name>radan</name>
 	<url>http://maven.apache.org</url>
 	<scm>
 		<connection>scm:git:git@github.com:ramjaya/Radan.git</connection>
 		<url>scm:git:git@github.com:ramjaya/Radan.git</url>
 		<developerConnection>scm:git:git@github.com:ramjaya/Radan.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>radan-0.0.5</tag>
 	</scm>
 
 	<distributionManagement>
@@ -53,7 +52,8 @@
 					<plugins>
 
 
-						<plugin>
+					
+					<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-javadoc-plugin</artifactId>
 							<executions>
