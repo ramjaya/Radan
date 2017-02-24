@@ -43,55 +43,12 @@
 		</dependency>
 	</dependencies>
 
-	<profiles>
-		<profile>
-			<!-- This id will be used in maven release pluggin -->
-			<id>release</id>
-
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<artifactId>maven-release-plugin</artifactId>
-							<version>2.5.2</version>
-
-							<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-javadoc-plugin</artifactId>
-								<executions>
-									<execution>
-										<id>attach-javadocs</id>
-										<goals>
-											<goal>jar</goal>
-										</goals>
-									</execution>
-								</executions>
-							</plugin>
-					</plugins>
-				</plugin>
-
-
-					<plugin>
-						<artifactId>maven-release-plugin</artifactId>
-						<version>2.5.2</version>
-						<executions>
-							<execution>
-								<id>default</id>
-								<goals>
-									<goal>perform</goal>
-								</goals>
-								<configuration>
-									<pomFileName>${project.name}/pom.xml</pomFileName>
-									<useReleaseProfile>false</useReleaseProfile>
-									<!-- the id of the release profile -->
-									<releaseProfiles>release</releaseProfiles>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-
-
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.2</version>
 					<executions>
 						<execution>
 							<id>default</id>
@@ -103,12 +60,8 @@
 							</configuration>
 						</execution>
 					</executions>
-
-				</plugins>
-				</pluginManagement>
-			</build>
-			
-			</profile>
-</profiles>
-			
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
