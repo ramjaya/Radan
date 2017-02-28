@@ -11,7 +11,7 @@
 		<connection>scm:git:git@github.com:ramjaya/Radan.git</connection>
 		<url>scm:git:git@github.com:ramjaya/Radan.git</url>
 		<developerConnection>scm:git:git@github.com:ramjaya/Radan.git</developerConnection>
-		<tag>radan-0.0.5</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
 		<!-- Publish the versioned snapshot here -->
@@ -42,46 +42,25 @@ http://localhost:8080/nexus/content/repositories/snapshots/
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<profiles>
-		<profile>
-			<!-- This id will be used in maven release pluggin -->
-			<id>release</id>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<executions>
-								<execution>
-									<id>attach-javadocs</id>
-									<goals>
-										<goal>jar</goal>
-									</goals>
-								</execution>
-							</executions>
-						</plugin>
-						<plugin>
-							<artifactId>maven-release-plugin</artifactId>
-							<version>2.5.2</version>
-							<executions>
-								<execution>
-									<id>default</id>
-									<goals>
-										<goal>perform</goal>
-									</goals>
-									<configuration>
-										<pomFileName>${project.name}/pom.xml</pomFileName>
-										<useReleaseProfile>false</useReleaseProfile>
-										<!-- the id of the release profile -->
-										<releaseProfiles>release</releaseProfiles>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
-	</profiles>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.2</version>
+					<executions>
+						<execution>
+							<id>default</id>
+							<goals>
+								<goal>perform</goal>
+							</goals>
+							<configuration>
+								<pomFileName>${project.name}/pom.xml</pomFileName>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
