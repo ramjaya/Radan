@@ -4,7 +4,7 @@
 	<groupId>com.demo.app</groupId>
 	<artifactId>radan</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.6</version>
+	<version>0.0.5</version>
 	<name>radan</name>
 	<url>http://maven.apache.org</url>
 	<scm>
