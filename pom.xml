@@ -4,36 +4,36 @@
 	<groupId>com.demo.app</groupId>
 	<artifactId>radan</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 	<name>radan</name>
 	<url>http://maven.apache.org</url>
 	<scm>
 		<connection>scm:git:git@github.com:ramjaya/Radan.git</connection>
 		<url>scm:git:git@github.com:ramjaya/Radan.git</url>
 		<developerConnection>scm:git:git@github.com:ramjaya/Radan.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>radan-0.0.5</tag>
 	</scm>
-
 	<distributionManagement>
 		<!-- Publish the versioned snapshot here -->
 		<repository>
 			<id>radan</id>
-			<name>radan-nexus</name>
-			<url>http://localhost:8080/nexus/content/repositories/releases</url>
+			<name>radan</name>
+			<url>
+http://localhost:8080/nexus/content/repositories/releases/
+</url>
 		</repository>
-
 		<!-- Publish the versioned releases here -->
 		<snapshotRepository>
 			<id>radan</id>
-			<name>radan-nexus</name>
-			<url>http://localhost:8080/nexus/content/repositories/snapshots</url>
+			<name>radan</name>
+			<url>
+http://localhost:8080/nexus/content/repositories/snapshots/
+</url>
 		</snapshotRepository>
 	</distributionManagement>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -42,26 +42,46 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.5.2</version>
-					<executions>
-						<execution>
-							<id>default</id>
-							<goals>
-								<goal>perform</goal>
-							</goals>
-							<configuration>
-								<pomFileName>${project.name}/pom.xml</pomFileName>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+	<profiles>
+		<profile>
+			<!-- This id will be used in maven release pluggin -->
+			<id>release</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<executions>
+								<execution>
+									<id>attach-javadocs</id>
+									<goals>
+										<goal>jar</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+						<plugin>
+							<artifactId>maven-release-plugin</artifactId>
+							<version>2.5.2</version>
+							<executions>
+								<execution>
+									<id>default</id>
+									<goals>
+										<goal>perform</goal>
+									</goals>
+									<configuration>
+										<pomFileName>${project.name}/pom.xml</pomFileName>
+										<useReleaseProfile>false</useReleaseProfile>
+										<!-- the id of the release profile -->
+										<releaseProfiles>release</releaseProfiles>
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
 </project>
