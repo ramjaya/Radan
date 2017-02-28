@@ -17,8 +17,8 @@
 	<distributionManagement>
 		<!-- Publish the versioned snapshot here -->
 		<repository>
-			<id>codezarvis</id>
-			<name>codezarvis-nexus</name>
+			<id>radan</id>
+			<name>radan-nexus</name>
 			<url>http://localhost:8080/nexus/content/repositories/releases</url>
 		</repository>
 
