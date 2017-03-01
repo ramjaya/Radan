@@ -4,7 +4,7 @@
 	<groupId>com.demo.app</groupId>
 	<artifactId>radan</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.6</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<name>radan</name>
 	<url>http://maven.apache.org</url>
 	<scm>
@@ -18,17 +18,13 @@
 		<repository>
 			<id>radan</id>
 			<name>radan</name>
-			<url>
-http://localhost:8080/nexus/content/repositories/releases/
-</url>
+			<url>http://localhost:8080/nexus/content/repositories/releases/</url>
 		</repository>
 		<!-- Publish the versioned releases here -->
 		<snapshotRepository>
 			<id>radan</id>
 			<name>radan</name>
-			<url>
-http://localhost:8080/nexus/content/repositories/snapshots/
-</url>
+			<url>http://localhost:8080/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<properties>
