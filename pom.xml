@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.demo.app</groupId>
 	<artifactId>radan</artifactId>
@@ -58,10 +59,38 @@
 						</execution>
 					</executions>
 				</plugin>
+				
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>3.0.0</version>
+					<configuration>
+						<descriptors>
+							<descriptor>src/main/assembly/queries.xml</descriptor>
+							<descriptor>src/main/assembly/config.xml</descriptor>
+						</descriptors>
+					</configuration>
+					<executions>
+
+						<execution>
+							<id>Tab_Queries</id>
+							<goals>
+								<goal>single</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+						<execution>
+							<id>report_configuration</id>
+							<goals>
+								<goal>single</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 	<profiles>
 		<profile>
 			<!-- This id will be used in maven release pluggin -->
