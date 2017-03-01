@@ -3,14 +3,14 @@
 	<groupId>com.demo.app</groupId>
 	<artifactId>radan</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.10-SNAPSHOT</version>
+	<version>0.0.10</version>
 	<name>radan</name>
 	<url>http://maven.apache.org</url>
 	<scm>
 		<connection>scm:git:git@github.com:ramjaya/Radan.git</connection>
 		<url>scm:git:git@github.com:ramjaya/Radan.git</url>
 		<developerConnection>scm:git:git@github.com:ramjaya/Radan.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>radan-0.0.10</tag>
 	</scm>
 	<distributionManagement>
 		<!-- Publish the versioned snapshot here -->
